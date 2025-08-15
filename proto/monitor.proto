@@ -1,0 +1,22 @@
+syntax = "proto3";
+package monitor;
+
+option python_package = "app.proto";
+
+message GetStatusRequest {
+  // empty for now; metadata (auth) sent via gRPC metadata
+}
+
+message GetStatusResponse {
+  int32 id = 1;
+  string leader = 2;
+  int64 lamport = 3;
+  string state = 4;
+  double cpu = 5;
+  double memory = 6;
+  int64 uptime = 7;
+}
+
+service Monitor {
+  rpc GetStatus(GetStatusRequest) returns (GetStatusResponse);
+}

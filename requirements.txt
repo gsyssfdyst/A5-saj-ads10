@@ -1,0 +1,6 @@
+grpcio>=1.54.0
+grpcio-tools
+protobuf
+psutil
+PyJWT>=2.0
+pytest
